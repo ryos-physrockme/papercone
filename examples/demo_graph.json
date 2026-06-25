@@ -1,0 +1,46 @@
+{
+  "papers": [
+    {
+      "id": "reference",
+      "title": "Reference paper",
+      "abstract": "A past work cited by the seed paper.",
+      "year": 2019,
+      "source": "fixture",
+      "x": -0.4,
+      "y": 0.1,
+      "z": 2019
+    },
+    {
+      "id": "seed",
+      "title": "Seed paper",
+      "abstract": "The paper at the center of the local research map.",
+      "year": 2024,
+      "source": "fixture",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 2024
+    },
+    {
+      "id": "citation",
+      "title": "Future citation paper",
+      "abstract": "A later work that cites the seed paper.",
+      "year": 2026,
+      "source": "fixture",
+      "x": 0.35,
+      "y": 0.2,
+      "z": 2026
+    }
+  ],
+  "edges": [
+    {
+      "source_id": "seed",
+      "target_id": "reference",
+      "kind": "cites"
+    },
+    {
+      "source_id": "seed",
+      "target_id": "citation",
+      "kind": "cited_by"
+    }
+  ]
+}
