@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "papercone"
+version = "0.0.1"
+description = "A personal research map for navigating citation cones, semantic neighborhoods, and emerging frontiers."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Ryosuke Suda" }
+]
+license = { text = "MIT" }
+keywords = ["research", "citation-graph", "embeddings", "literature-map"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5"
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
