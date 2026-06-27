@@ -66,6 +66,7 @@ class PaperGraph:
             return
 
         details = ", ".join(
-            f"edge[{issue.edge_index}].{issue.role}_id={issue.paper_id!r}" for issue in missing
+            f"edge[{issue.edge_index}].{issue.role}_id={issue.paper_id!r}"
+            for issue in missing
         )
         raise GraphValidationError(f"Missing edge endpoints: {details}")
