@@ -1,9 +1,9 @@
 import json
 
 from papercone.core.fixtures import make_demo_graph
+from papercone.core.graph import PaperGraph
 from papercone.core.jsonio import graph_from_dict, read_graph_json, write_graph_json
 from papercone.core.models import ExternalId, Paper, PaperEdge
-from papercone.core.graph import PaperGraph
 
 
 def test_write_graph_json(tmp_path) -> None:
