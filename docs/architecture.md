@@ -39,17 +39,27 @@ Expected fields:
 - citation_count
 - external_ids
 
+`id` is the local papercone identifier used inside one graph snapshot. Provider-specific identifiers are stored separately as normalized `ExternalId` entries so the core model does not depend on one data provider.
+
+Initial external ID kinds:
+
+- `arxiv`
+- `doi`
+- `inspire`
+- `openalex`
+- `semantic_scholar`
+
 ### PaperEdge
 
 A directed relation between papers.
 
 Initial edge kinds:
 
-- `cites`: source paper cites target paper
-- `cited_by`: source paper is cited by target paper
-- `related`: provider-supplied or embedding-derived relation
+- `cites`: `source_id` cites `target_id`
+- `cited_by`: `source_id` is cited by `target_id`
+- `related`: provider-supplied or embedding-derived relation with explicit endpoints
 
-Internally, citation edges should preserve direction. A later visualization can choose whether to draw all edges from past to future.
+Internally, citation edges preserve direction and relation type. A later visualization can choose whether to draw all citation-like edges from past to future, but the exported graph should not silently rewrite edge endpoints.
 
 ### PaperGraph
 
