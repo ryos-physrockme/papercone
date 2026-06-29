@@ -2,7 +2,10 @@ from papercone.core.models import ExternalId, Paper, PaperEdge
 
 
 def test_paper_model_minimal_fields() -> None:
-    paper = Paper(id="arxiv:2305.01421", title="Model building by coset space dimensional reduction")
+    paper = Paper(
+        id="arxiv:2305.01421",
+        title="Model building by coset space dimensional reduction",
+    )
 
     assert paper.id == "arxiv:2305.01421"
     assert paper.title.startswith("Model building")
