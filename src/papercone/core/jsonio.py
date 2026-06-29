@@ -14,8 +14,10 @@ from papercone.core.models import EdgeKind, ExternalId, ExternalIdKind, Paper, P
 def write_graph_json(graph: PaperGraph, path: str | Path) -> None:
     """Write a graph snapshot to a JSON file."""
 
+    output_path = Path(path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     payload: dict[str, list[dict[str, Any]]] = graph_to_dict(graph)
-    Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    output_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def read_graph_json(path: str | Path) -> PaperGraph:
