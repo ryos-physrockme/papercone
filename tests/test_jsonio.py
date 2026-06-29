@@ -16,6 +16,14 @@ def test_write_graph_json(tmp_path) -> None:
     assert len(payload["edges"]) == 2
 
 
+def test_write_graph_json_creates_parent_directories(tmp_path) -> None:
+    path = tmp_path / "examples" / "demo_graph.json"
+
+    write_graph_json(make_demo_graph(), path)
+
+    assert path.exists()
+
+
 def test_read_graph_json_round_trips_core_fields(tmp_path) -> None:
     graph = PaperGraph()
     graph.add_paper(
