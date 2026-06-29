@@ -15,6 +15,9 @@ license = { text = "MIT" }
 keywords = ["research", "citation-graph", "embeddings", "literature-map"]
 dependencies = []
 
+[project.scripts]
+papercone = "papercone.cli:main"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
